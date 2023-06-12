@@ -12,7 +12,7 @@ class CreateUsuariosTable extends Migration
             $table->id();
             $table->string('nombre');
             $table->string('apellidopaterno');
-            $table->integer('apellidomaterno');
+            $table->string('apellidomaterno');
             $table->date('fecha_nacimiento');
             $table->string('carnet');
             $table->string('telefono');

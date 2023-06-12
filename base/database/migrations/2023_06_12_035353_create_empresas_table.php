@@ -16,8 +16,6 @@ class CreateEmpresasTable extends Migration
         Schema::create('empresas', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->foreignId('id_roles')->constrained('roles')->cascadeOnUpdate()->cascadeOnDelete();
-
             $table->string('direccion');
             $table->integer('telefono');
             $table->string('email');

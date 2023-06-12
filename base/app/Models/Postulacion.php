@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Postulacion extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'id_usuarios',
+        'id_trabajos',
+    ];
 }
