@@ -1,0 +1,24 @@
+:root {
+    --primary-bac: #b6ad90;
+    --primary-color: #a68a64;
+    --secondary-color: #936639;
+    --accent-color: #7f4f24;
+    --background-color: #582f0e;
+}
+
+.footer {
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    padding: 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-text {
+    margin: 5px 0;
+}

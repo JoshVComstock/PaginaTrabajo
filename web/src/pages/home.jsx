@@ -1,9 +1,21 @@
-import React from 'react'
-
-const home = () => {
+import React from "react";
+import Centro from "../components/home/centro";
+import Bloques from "../components/home/bloques";
+import Portada from "../components/home/portada";
+const Home = () => {
   return (
-    <div>home</div>
-  )
-}
+    <>
+      <section>
+        <Portada />
+      </section>
+      <section>
+        <Centro />
+      </section>
+      <section>
+        <Bloques />
+      </section>
+    </>
+  );
+};
 
-export default home
+export default Home;
