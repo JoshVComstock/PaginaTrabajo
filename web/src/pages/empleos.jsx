@@ -8,7 +8,7 @@ const Empleos = () => {
         alt=""
       />
       <div className="search-container">
-        <input type="text" class="search-input" placeholder="Buscar empleo" />
+        <input type="text" className="search-input" placeholder="Buscar empleo" />
         <button className="search-button">Buscar</button>
       </div>
       <div className="results">

@@ -3,15 +3,15 @@ import "../../style/bashboard.css";
 const Dashboard = () => {
   return (
     <>
-      <div class="dashboard">
+      <div className="dashboard">
         
-        <div class="sidebar">
+        <div className="sidebar">
            
-          <h1 class="dashboard-title">JOBABILITY</h1>
-          <nav class="navigation">
+          <h1 className="dashboard-title">JOBABILITY</h1>
+          <nav className="navigation">
             <ul>
               <li>
-                <a href="#" class="active">
+                <a href="#" className="active">
                   Trabajo
                 </a>
               </li>
@@ -21,8 +21,8 @@ const Dashboard = () => {
             </ul>
           </nav>
         </div>
-        <div class="content">
-          <h2 class="page-title">Contenido del Dashboard</h2>
+        <div className="content">
+          <h2 className="page-title">Contenido del Dashboard</h2>
           <p>Aquí va el contenido del dashboard...</p>
         </div>
       </div>

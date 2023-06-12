@@ -3,8 +3,8 @@ import "../../style/home.css";
 const Centro = () => {
   return (
     <div className="padre">
-      <div class="cover">
-        <div class="cover-content">
+      <div className="cover">
+        <div className="cover-content">
           <img
             src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=600"
             alt="Logo"

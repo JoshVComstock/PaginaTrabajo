@@ -5,12 +5,12 @@ const Trabajo = () => {
   return (
     <div>
       <div className="crud">
-        <h1 class="crud-title">Usuarios</h1>
-        <table class="crud-table">
+        <h1 className="crud-title">Usuarios</h1>
+        <table className="crud-table">
           <thead>
             <tr>
               <th>#</th>
-              <th>Nombre</th>
+              <th>Nombre</th> 
               <th>Email</th>
               <th>Acciones</th>
             </tr>
@@ -21,8 +21,8 @@ const Trabajo = () => {
               <td>francisco</td>
               <td>frack@gmail.com</td>
               <td>
-                <button class="crud-button">Editar</button>
-                <button class="crud-button">Eliminar</button>
+                <button className="crud-button">Editar</button>
+                <button className="crud-button">Eliminar</button>
               </td>
             </tr>
           </tbody>
