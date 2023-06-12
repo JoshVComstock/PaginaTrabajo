@@ -8,19 +8,23 @@ import Dashboard from "./pages/admin/dashboard";
 import Empleos from "./pages/empleos";
 import Home from "./pages/home";
 import Login from "./pages/login";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 
 function App() {
   return (
-    <>
-      {/* <Home /> 
-      <Nav />
-      <Empleos />
-      <Login />
-      <Footer />
-      <Dashboard />
-      <Formulariousuario/>*/}
-      <Trabajo />
-    </>
+   <>
+    <BrowserRouter>
+    <Routes>
+   <Route path="login" element={<Login />} />
+   <Route path="/" element={ <Nav/> }>
+ <Route path="home" element={<Home />} />
+  <Route path="Empleados" element={<Empleos/>} />
+  </Route>
+
+  </Routes>
+    </BrowserRouter>
+   </>
   );
 }
 
