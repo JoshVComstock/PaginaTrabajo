@@ -1,0 +1,104 @@
+.padrec {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.capsule {
+    margin: 10px;
+    width: 700px;
+    height: 250px;
+    display: flex;
+    background-color: var(--primary-bac);
+    border-radius: 7px;
+    padding: 20px;
+    box-shadow: 0 4px 5px rgba(0, 0, 0, 0.1);
+}
+
+.capsule-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.capsule-content {
+    flex: 1;
+}
+
+.capsule-title {
+    font-size: 24px;
+    margin: 0 0 10px 0;
+    color: var(--primary-color);
+}
+
+.capsule-description {
+    font-size: 16px;
+    color: var(--secondary-color);
+    margin: 0 0 15px 0;
+}
+
+.capsule-link {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.capsule-link:hover {
+    text-decoration: underline;
+}
+
+/*centro*/
+:root {
+    --primary-bac: #b6ad90;
+    --primary-color: #a68a64;
+    --secondary-color: #936639;
+    --accent-color: #7f4f24;
+    --background-color: #582f0e;
+}
+
+.padre {
+    height: 100vh;
+    margin: 0;
+}
+
+.cover {
+    position: relative;
+    height: 100%;
+}
+
+img.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.cover-content {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.cover h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 20px 0;
+    text-transform: uppercase;
+}
+
+.cover p {
+    font-size: 18px;
+}
+
+/*POrtada*/

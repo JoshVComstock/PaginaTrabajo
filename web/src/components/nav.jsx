@@ -4,24 +4,23 @@ import styled from "styled-components";
 const Nav = () => {
   return (
     <>
-      <Container>
-        <img src="" alt="" />
+      <nav>
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr1t6W1cgpw3NFDyNW18-diiLsRQlpm27nnQ&usqp=CAU"
+          alt=""
+        />
         <div>
-          <Link>Inicio</Link>
-          <Link>Empleos</Link>
-          <Link>Empresas</Link>
+          <a href="">Inicio</a>
+          <a href="">Empleos</a>
+          <a href="">Empresas</a>
         </div>
         <div>
-          <Link>Login</Link>
-          <Link>Registrarse</Link>
+          <a href="">Iniciar secion</a>
+          <a href="">Registro</a>
         </div>
-      </Container>
+      </nav>
     </>
   );
 };
 
 export default Nav;
-
-const Container=styled.nav`
-    
-`;
