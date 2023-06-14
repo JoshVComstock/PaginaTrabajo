@@ -5,8 +5,12 @@
     --accent-color: #7f4f24;
     --background-color: #582f0e;
   }
-  
+  .cons{
+    height: 100vh;
+    
+  }
   .crud {
+   
     max-width: 600px;
     margin: auto;
     background-color: var(--primary-bac);

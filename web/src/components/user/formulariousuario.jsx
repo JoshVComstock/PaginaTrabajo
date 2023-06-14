@@ -13,7 +13,7 @@ const Formulariousuario = () => {
               id="nombre"
               name="nombre"
               className="form-input"
-              placeholder="Ingrese su nombre"
+              
             />
           </div>
           <div className="form-group">
@@ -23,7 +23,7 @@ const Formulariousuario = () => {
               id="apellido-p"
               name="apellido-p"
               className="form-input"
-              placeholder="Ingrese su apellido paterno"
+              
             />
           </div>
           <div className="form-group">
@@ -33,7 +33,7 @@ const Formulariousuario = () => {
               id="apellido-m"
               name="apellido-m"
               className="form-input"
-              placeholder="Ingrese su apellido materno"
+              
             />
           </div>
           <div className="form-group">
@@ -54,7 +54,7 @@ const Formulariousuario = () => {
               id="carnet"
               name="carnet"
               className="form-input"
-              placeholder="Ingrese su carnet de identidad"
+              
             />
           </div>
           <div className="form-group">
@@ -64,7 +64,7 @@ const Formulariousuario = () => {
               id="telefono"
               name="telefono"
               className="form-input"
-              placeholder="Ingrese su número de teléfono"
+              
             />
           </div>
           <div className="form-group">
@@ -84,7 +84,7 @@ const Formulariousuario = () => {
               id="contrasena"
               name="contrasena"
               className="form-input"
-              placeholder="Ingrese su contraseña"
+              
             />
           </div>
         </div>

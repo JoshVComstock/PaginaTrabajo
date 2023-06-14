@@ -5,9 +5,7 @@ import Portada from "../components/home/portada";
 const Home = () => {
   return (
     <>
-      <section>
-        <Portada />
-      </section>
+   
       <section>
         <Centro />
       </section>

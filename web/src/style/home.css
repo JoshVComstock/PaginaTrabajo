@@ -61,7 +61,8 @@
     --background-color: #582f0e;
 }
 
-.padre {
+.pad {
+   
     height: 100vh;
     margin: 0;
 }
@@ -83,7 +84,7 @@ img.background-image {
 
 .cover-content {
     position: absolute;
-    top: 45%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -95,6 +96,7 @@ img.background-image {
     font-weight: bold;
     margin: 20px 0;
     text-transform: uppercase;
+    
 }
 
 .cover p {

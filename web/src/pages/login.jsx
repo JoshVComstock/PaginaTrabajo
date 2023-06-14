@@ -1,10 +1,10 @@
 import React from "react";
-import '../style/login.css'
-import styled from "styled-components";
+import "../style/login.css";
+
 
 const Login = () => {
   return (
-    <Contenedor  className="container">
+    <div className="container">
       <table className="login-table">
         <tr>
           <td colspan="2" className="login-header">
@@ -37,11 +37,8 @@ const Login = () => {
           </td>
         </tr>
       </table>
-    </Contenedor>
+    </div>
   );
 };
 
 export default Login;
-const Contenedor = styled.div`
-
-`;

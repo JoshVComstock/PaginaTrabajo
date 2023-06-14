@@ -2,7 +2,7 @@ import React from "react";
 import "../../style/home.css";
 const Centro = () => {
   return (
-    <div className="padre">
+    <div className="pad">
       <div className="cover">
         <div className="cover-content">
           <img
