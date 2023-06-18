@@ -8,6 +8,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  
 `;
 export const Sectionpa = styled.section`
   width: 95%;
@@ -143,7 +144,7 @@ export const Divmayor = styled.div`
     color: #000;
     outline: none;
     width: 60%;
-    place-content: #000;
+    
     &:focus {
       color: #000;
       outline: none;
@@ -221,7 +222,7 @@ export const Botonesacciones = styled.button``;
 
 export const Divtabla = styled.div`
   width: 100%;
-  margin: 1em auto;
+  margin:20px;
   border-collapse: collapse;
   text-align: center;
   background-color: rgb(245, 245, 243);
@@ -278,8 +279,9 @@ export const Tbody = styled.tbody``;
 export const Sectiontabla = styled.section`
   overflow-y: scroll;
   width: 100vw;
-  height: 100%;
+  height: calc(100vh - 4em);
   margin-bottom: 0.5em;
+  margin: 20px;
 `;
 export const Th = styled.th`
   border: solid 0.5px #0002;
@@ -295,7 +297,7 @@ padding: 10px;
 box-shadow: 0px 1px 0px 0px rgba(0,0,0,0.3);
 `;
 export const Tabla = styled.table`
-  width: 100%;
+  width: 90%;
   border-collapse: collapse;
   font-size: 0.9rem;
   overflow-y: scroll;

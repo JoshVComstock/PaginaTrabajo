@@ -4,9 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Notifications\Notifiable;
 
 class Usuario extends Model
 {
+    use HasApiTokens, HasFactory, Notifiable;
+    protected $table = "usuarios";
     use HasFactory;
     protected $fillable = [
         'nombre',
@@ -16,7 +20,7 @@ class Usuario extends Model
         'carnet',
         'telefono',
         'email',
-        'contraseña',
+        'password',
         'id_roles',
     ];
 }

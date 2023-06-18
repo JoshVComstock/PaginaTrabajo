@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { useState, useEffect } from "react";
-import { postEmpresas } from "../services/Empresas";
+import { postEmpresas, updateEmpresas } from "../services/Empresas";
 const FormEmpresas = ({
   getApi,
   empresaactual,
@@ -28,7 +28,7 @@ const FormEmpresas = ({
   const updatepost = (e) => {
     e.preventDefault();
     if (Object.keys(empresaactual).length > 0) {
-      updateCiudades(
+      updateEmpresas(
         {
           id: empresaactual.id,
           nombre: nombre,
@@ -122,6 +122,11 @@ const Input = styled.input`
   outline: none;
   &:focus {
     border: 1.5px solid #034078;
+    
+  }
+  &:hover{
+    border: 1px solid #034078;
+    box-shadow: 1px 0px 2px 0px #034078;
   }
 `;
 const Divboton = styled.div`
@@ -131,10 +136,10 @@ const Divboton = styled.div`
 const Botonagregar = styled.button`
   padding: 10px;
   cursor: pointer;
-  background: #034078;
+  background: #0077b6;
   color: #fff;
   border-radius: 7px;
   &:hover {
-    background: #0077b6;
+    background: #40607e;
   }
 `;

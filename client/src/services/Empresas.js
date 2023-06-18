@@ -38,7 +38,7 @@ export const updateEmpresas = async (empresaactual, callback) => {
       accept: "application/json",
     },
     body: JSON.stringify({
-      nombre: empresaactual.direccion,
+      nombre: empresaactual.nombre,
       direccion: empresaactual.direccion,
       telefono: empresaactual.telefono,
       email: empresaactual.email,

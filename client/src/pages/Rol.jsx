@@ -33,6 +33,7 @@ const Rol = () => {
   const [filtro, setFiltro] = useState("");
   return (
     <>
+      <Sectiontabla>
     <h1>USUARIOS</h1>
       <Divmayor>
         <label>buscar</label>
@@ -46,7 +47,7 @@ const Rol = () => {
       <section>
         <h2>Registro Usuarios</h2>
       </section>
-      <Sectiontabla>
+    
         <Divtabla>
           <Tabla>
             <Thead>

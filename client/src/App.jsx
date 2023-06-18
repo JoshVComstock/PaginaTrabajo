@@ -13,6 +13,9 @@ import { Navcontextprovider } from "./context/navcontext";
 import { Usercontextprovider } from "./context/userContext";
 import Consultas from "./pages/Postulaciones";
 import FormEmpresas from "./Models/FormEmpresas";
+import Empresas from "./pages/Empresas";
+import Trabajos from "./pages/Trabajo";
+import Postulaciones from "./pages/Postulaciones";
 
 function App() {
   return (
@@ -24,13 +27,10 @@ function App() {
               <Routes>
                 <Route path="login" element={<Login />} />
                 <Route path="/" element={<Navbar />}>
-                  <Route path="home" element={<Home />} />
-                  <Route path="centros" element={<Rol />} />
-                  <Route path="empresas" element={<Ciudades />} />
-                  <Route path="redes" element={<Rol />} />
-                  <Route path="laboratorios" element={<Laboratorios />} />
-                  <Route path="consultas" element={<Consultas />} />
-                  <Route path="formempresa" element={<FormEmpresas />} />
+                  <Route path="usuarios" element={<Rol />} />
+                  <Route path="empresas" element={<Empresas />} />
+                  <Route path="trabajos" element={<Trabajos />} />
+                  <Route path="postulaciones" element={<Postulaciones />} />
                 </Route>
               </Routes>
               <Modal />

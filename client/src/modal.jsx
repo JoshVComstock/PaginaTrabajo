@@ -9,9 +9,10 @@ const Modal = () => {
         <DivAtras onClick={() => setOpenModal(false)}></DivAtras>
         <DivChildContainer>
           <DivCabecera>
-            <PTitulo>{titulo}</PTitulo>
+            
             <Botoncerrar onClick={() => setOpenModal(false)}>X</Botoncerrar>
           </DivCabecera>
+          <PTitulo>{titulo}</PTitulo>
           <DivBody>{contenido}</DivBody>
         </DivChildContainer>
       </DivModalContainer>
@@ -22,15 +23,10 @@ export default Modal;
 const Botoncerrar = styled.button`
   height: 35px;
   width: 35px;
-  font-size: 20px;
+  font-size: 17px;
   color: #fff;
   background: none;
   cursor: pointer;
- 
-  &:hover {
-    border-bottom: 3px solid #fff;
-    
-  }
 `;
 const DivModalContainer = styled.div`
   width: 100%;
@@ -66,7 +62,7 @@ const DivChildContainer = styled.div`
   z-index: 1;
   border-radius: 10px;
   min-width: 400px;
-  background-color: #ffffffbf;
+  background-color: #fff;
   animation: move 1s;
   transform: translateY(50px);
   margin-bottom: 100px;
@@ -78,15 +74,16 @@ const PTitulo = styled.p`
   font-size: 22px;
   display: flex;
   justify-content: center;
-  color: #fff;
+  color: #000;
 `;
 const DivCabecera = styled.div`
   width: 100%;
-  padding: 10px 26px;
+  height: 20px;
+  padding: 0px 26px;
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
   align-items: center;
-  background-color: rgb(34, 152, 202);
+  background-color: rgb(0, 0, 0);
   position: relative;
   border-radius: 8px 8px 0 0;
 `;

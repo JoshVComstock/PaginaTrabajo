@@ -30,9 +30,9 @@ const Navbar = () => {
           </Logo>
           <Diva>
             <Linkes to="/empresas">Empresas</Linkes>
-            <Linkes to="/consultas">Postulantes</Linkes>
-            <Linkes to="/centros">Usuarios</Linkes>
-            <Linkes to="/laboratorios">Trabajos</Linkes>
+            <Linkes to="/postulaciones">Postulantes</Linkes>
+            <Linkes to="/usuarios">Usuarios</Linkes>
+            <Linkes to="/trabajos">Trabajos</Linkes>
           </Diva>
           <User>
             <Topnavimg src="src\img\avatar.png" alt="" />
@@ -116,11 +116,6 @@ const User = styled.div`
 const H = styled.h5`
   color: #000000;
   font-size: 1.3em;
-
-  &::first-letter {
-    font-size: 1.2em;
-    color: blue;
-  }
 `;
 const Diva = styled.div`
   background-color: rgb(245, 245, 243);

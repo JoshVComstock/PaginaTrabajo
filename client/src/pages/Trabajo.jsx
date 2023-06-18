@@ -7,18 +7,6 @@ const baseUrl = import.meta.env.VITE_BACKEND_URL;
 import styled from "styled-components";
 import {
   Container,
-  Botonacciones,
-  Iconsacciones,
-  Iconsacciones1,
-  Botonesacciones,
-  Divtabla,
-  Thead,
-  Tbody,
-  Th,
-  Trdatos,
-  Tabla,
-  Sectionpa,
-  Divreport,
   Divmayor,
   Sectiontabla,
 } from "../styles/crud";
@@ -26,7 +14,7 @@ import mun from "../img/icons/Redes.jpg";
 import { deleteTrabajo, getTrabajo } from "../services/Trabajo";
 import { UseFech } from "../hooks/useFech";
 import Formlaboratorio from "../Models/FormTrabajo";
-const Laboratorios = () => {
+const Trabajos = () => {
   const [actual, setActual] = useState({});
   const [filtro, setFiltro] = useState("");
   const { getApi, data: trabajo } = UseFech(getTrabajo);
@@ -65,8 +53,8 @@ const Laboratorios = () => {
                   <p>{v.estado}</p>
                 </div>
                 <Botones>
-                  <button>x</button>
-                  <button>Editar</button>
+                  <button onClick={deleteTrabajo(v.id)} ><img src="https://cdn-icons-png.flaticon.com/128/1828/1828843.png" alt="" /></button>
+                  <button><img src="https://cdn-icons-png.flaticon.com/128/860/860814.png" alt="" /></button>
                 </Botones>
               </Card>
             </>
@@ -76,8 +64,7 @@ const Laboratorios = () => {
     </Container>
   );
 };
-
-export default Laboratorios;
+export default Trabajos;
 const Card = styled.div`
 margin: 20px;
   height: 220px;
@@ -119,14 +106,14 @@ export const Sectiond = styled.div`
   gap: 2em;
 `;
 export const Dippadretabla = styled.div`
-  width: 47.8%;
-  margin: 0 auto;
+  width: 100vw;
   background: rgb(255, 255, 255);
   overflow: hidden;
   height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   border: solid 1px #0002;
   & section {
     width: 100%;
@@ -151,10 +138,7 @@ export const Dippadretabla = styled.div`
       font-size: 1em;
       padding: 0.5em 2em;
       letter-spacing: 1.5px;
-      &::first-letter {
-        color: blue;
-        font-size: 1.2em;
-      }
+      
     }
   }
 `;
