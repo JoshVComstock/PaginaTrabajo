@@ -13,7 +13,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
   return (
     <>
-      {/* <BrowserRouter>
+      <BrowserRouter>
         <Routes>
           <Route path="login" element={<Login />} />
           <Route path="/" element={<Nav />}>
@@ -21,11 +21,9 @@ function App() {
             <Route path="empleos" element={<Empleos />} />
           </Route>
         </Routes>
-      </BrowserRouter> */}
-      {/* <Nav/>
-      <Home/>
-      <Footer/> */}
-      <Empleos/>
+      </BrowserRouter>
+
+
     </>
   );
 }

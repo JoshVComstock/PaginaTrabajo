@@ -1,46 +1,46 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useState } from 'react';
-import { getTrabajo } from '../services/Trabajo';
 import { UseFech } from '../hooks/useFech';
 import { getPostulacion } from '../services/Postulacion';
 import { deletePostulacion } from '../services/Postulacion';
+import { getEmpresas } from '../services/Empresas';
 const Postulaciones = () => {
   const { getApi, data: postulantes } = UseFech(getPostulacion);
+  const { data: empresas } = UseFech(getEmpresas);
   const [filtro, setFiltro] = useState("");
+
   return (
     <>
       <Divsearch>
         <label htmlFor="">Buscar postulantes</label>
         <input type="search" placeholder='Buscar' value={filtro} onChange={(e) => setFiltro(e.target.value)} />
       </Divsearch>
-      <Section>
-        {postulantes.filter((v) =>
-          v.empresa.toLowerCase().includes(filtro.toLowerCase())
-        ).map((v, i) => (
-          <>
-            <article key={i}>
-              <p>Coordinador: {v.usuario}</p>
-              <p>Empresa: {v.empresa}</p>
+      {empresas.map((v, i) => (
+        <Section key={i}>
+          <h1>{v.nombre}</h1>
+          {postulantes.filter((a) => a.empresa.includes(v.nombre)).map((e, k) => (
+            <article key={k}>
+              <p>Coordinador: {e.usuario}</p>
+              <p>Empresa: {e.empresa}</p>
               <div>
-                <p>Trabajo : {v.nombre}</p>
+                <p>Trabajo: {e.nombre}</p>
                 <p>Modalidad</p>
-                <p>fecha: {v.created_at}</p>
+                <p>fecha: {e.created_at}</p>
               </div>
-              <p>
-                {v.descripcion} </p>
+              <p>{e.descripcion}</p>
               <Divbutton>
                 <Botonap>Esperar</Botonap>
-                <Botone onClick={() => deletePostulacion(v.id, getApi)}>Eliminar</Botone>
+                <Botone onClick={() => deletePostulacion(e.id, getApi)}>Eliminar</Botone>
               </Divbutton>
             </article>
-          </>
-        ))}
-
-      </Section>
+          ))}
+        </Section>
+      ))}
     </>
   )
 };
+
 export default Postulaciones;
 const Section = styled.section`
   display: flex;
@@ -48,15 +48,15 @@ const Section = styled.section`
   flex-direction: row;
   flex-wrap: wrap;
   margin: 2em auto;
-  
+
   gap: 2em;
 
-  & > h2 {
+  & > h1 {
     color: blue;
     height: 1.2em;
-    display: grid;
     width: 100%;
     place-content: start;
+    margin-left: 60px;
   }
 
   & > div {
@@ -98,7 +98,6 @@ const Section = styled.section`
     background-color: #ffffff1f;
     box-shadow: 0 5px 10px #0005;
     border-radius: 7px;
-
     & > div {
       width: 100%;
       display: flex;

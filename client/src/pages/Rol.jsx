@@ -14,7 +14,6 @@ import {
   Search,
   Botonsearch,
   Botonacciones,
-  Iconsacciones,
   Iconsacciones1,
   Botonesacciones,
   Divtabla,
