@@ -1,10 +1,9 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useModal } from "../hooks/useModal";
-import Searchicons from "./../img/search.jpg";
-import Editar from "./../img/icons/Editar.jpg";
-import Eliminar from "./../img/icons/Delete.jpg";
+
 const baseUrl = import.meta.env.VITE_BACKEND_URL;
+<<<<<<< HEAD
 import {
   Container,
   Titulo,
@@ -25,76 +24,78 @@ import {
   Th,
   Trdatos,
 } from "../styles/crud";
+=======
+
+>>>>>>> 32e83aaba7295aac8b13f37f49ae1341f5162c8b
 import { UseFech } from "../hooks/useFech";
 import { getRoles } from "../services/Rol";
+import { Container } from "./Empresas";
 const Rol = () => {
   const { getApi, data: Rol } = UseFech(getRoles);
   const [filtro, setFiltro] = useState("");
   return (
     <>
-      <Sectiontabla>
-    <h1>USUARIOS</h1>
-      <Divmayor>
-        <label>buscar</label>
+      <Container>
+      <div>
+        <label>USUARIOS</label>{" "}
         <input
           type="text"
           placeholder="Buscar"
           value={filtro}
           onChange={(e) => setFiltro(e.target.value)}
         />
-      </Divmayor>
+        {/* <button onClick={openModal}>Registrar Usuario</button> */}
+      </div>
       <section>
-        <h2>Registro Usuarios</h2>
-      </section>
+
+
     
-        <Divtabla>
-          <Tabla>
-            <Thead>
+     
+          <table>
+            <thead>
               <tr>
-                <Th>Nº</Th>
-                <Th>USUARIO</Th>
-                <Th>APELLIDO PATERNO</Th>
-                <Th>APELLIDO MATERNO</Th>
-                <Th>CARNET</Th>
-                <Th>TELEFONO</Th>
-                <Th>EMAIL</Th>
-                <Th>ROL</Th>
-                <Th>ACCIONES</Th>
+                <th>Nº</th>
+                <th>USUARIO</th>
+                <th>APELLIDO PATERNO</th>
+                <th>APELLIDO MATERNO</th>
+                <th>CARNET</th>
+                <th>TELEFONO</th>
+                <th>EMAIL</th>
+                <th>ROL</th>
+                <th>ACCIONES</th>
               </tr>
-            </Thead>
+            </thead>
             {Rol.filter((v) =>
               v.nombre.toLowerCase().includes(filtro.toLowerCase())
             ).map((v, i) => (
-              <Tbody key={i}>
+              <tbody key={i}>
                 <tr>
-                  <Trdatos>{i + 1}</Trdatos>
-                  <Trdatos>{v.nombre}</Trdatos>
-                  <Trdatos>{v.apellidopaterno}</Trdatos>
-                  <Trdatos>{v.apellidomaterno}</Trdatos>
-                  <Trdatos>{v.carnet}</Trdatos>
-                  <Trdatos>{v.telefono}</Trdatos>
-                  <Trdatos>{v.email}</Trdatos>
-                  <Trdatos>{v.rol}</Trdatos>
-                  <Trdatos>
-                    <Botonacciones>
-                      <div></div>
-                      <div>
-                        <Iconsacciones1
+                  <th>{i + 1}</th>
+                  <th>{v.nombre}</th>
+                  <th>{v.apellidopaterno}</th>
+                  <th>{v.apellidomaterno}</th>
+                  <th>{v.carnet}</th>
+                  <th>{v.telefono}</th>
+                  <th>{v.email}</th>
+                  <th>{v.rol}</th>
+                  <th>
+                    <section>
+                        <button
                           onClick={() => {
                             deleteRedes(v.id, getApi);
                           }}
                         >
                           Eliminar
-                        </Iconsacciones1>
-                      </div>
-                    </Botonacciones>
-                  </Trdatos>
+                        </button>
+                 
+                    </section>
+                  </th>
                 </tr>
-              </Tbody>
+              </tbody>
             ))}
-          </Tabla>
-        </Divtabla>
-      </Sectiontabla>
+          </table>
+          </section>
+      </Container>
     </>
   );
 };

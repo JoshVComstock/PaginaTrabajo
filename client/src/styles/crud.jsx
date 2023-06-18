@@ -274,11 +274,11 @@ export const Tbody = styled.tbody``;
 
 export const Sectiontabla = styled.section`
   overflow-y: scroll;
-  width:80%;
+  width:100%;
   height: calc(100vh - 4em);
   margin-bottom: 0.5em;
   border:solid 1px red;
-background-color:blue;
+
 `;
 export const Th = styled.th`
   border: solid 0.5px #0002;

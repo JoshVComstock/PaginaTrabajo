@@ -5,24 +5,7 @@ import EmpresasForm from "../Models/FormEmpresas";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 const baseUrl = import.meta.env.VITE_BACKEND_URL;
-import {
-  Container,
-  Botonacciones,
-  Iconsacciones,
-  Iconsacciones1,
-  Botonesacciones,
-  Divtabla,
-  Thead,
-  Tbody,
-  Th,
-  Trdatos,
-  Sectiontabla,
-  Tabla,
-  Sectionpa,
-  Divreport,
-  Divbotonesa,
-  Divmayor,
-} from "../styles/crud";
+
 import { UseFech } from "../hooks/useFech";
 import { deleteEmpresas, getEmpresas } from "../services/Empresas";
 const Empresas = () => {
@@ -49,131 +32,169 @@ const Empresas = () => {
   }, [empresaactual]);
   return (
     <Container>
-      <Sectionpa>
-        <h1>Empresas</h1>
-        <Sectiond>
-          <Dippadretabla>
-            <Divmayor>
-            <button onClick={openModal}>Nueva empresa</button>
-              <input
-                type="text"
-                placeholder="Buscar"
-                value={filtro}
-                onChange={(e) => setFiltro(e.target.value)}
-              />
-            </Divmayor>
-            <section>
-              
-              <h2> Registro Empresas</h2>
-              
-            </section>
-            <Sectiontabla>
-              <Divtabla>
-                <Tabla>
-                  <Thead>
-                    <tr>
-                      <Th>Nº</Th>
-                      <Th>EMPRESA</Th>
-                      <Th>DIRECCION</Th>
-                      <Th>TELEFONO</Th>
-                      <Th>CORREO</Th>
-                      <Th>ACCIONES</Th>
-                    </tr>
-                  </Thead>
-                  {Empresa.filter((v) =>
-                    v.nombre.toLowerCase().includes(filtro.toLowerCase())
-                  ).map((v, i) => (
-                    <Tbody key={i}>
-                      <tr>
-                        <Trdatos>{i + 1}</Trdatos>
-                        <Trdatos>{v.nombre}</Trdatos>
-                        <Trdatos>{v.direccion}</Trdatos>
-                        <Trdatos>{v.telefono}</Trdatos>
-                        <Trdatos>{v.email}</Trdatos>
-                        <Trdatos>
-                          <Botonacciones>
-                            <div>
-                              <Iconsacciones
-                                onClick={() => {
-                                  setEmpresaactual(v);
-                                }}
-                              >
-                                Editar
-                              </Iconsacciones>
-                            </div>
-                            <div>
-                              <Iconsacciones1
-                                onClick={() => {
-                                  deleteEmpresas(v.id, getApi);
-                                }}
-                              >
-                                Eliminar
-                              </Iconsacciones1>
-                            </div>
-                          </Botonacciones>
-                        </Trdatos>
-                      </tr>
-                    </Tbody>
-                  ))}
-                </Tabla>
-              </Divtabla>
-            </Sectiontabla>
-          </Dippadretabla>
-        </Sectiond>
-      </Sectionpa>
+      <div>
+        <label>Empresas</label>{" "}
+        <input
+          type="text"
+          placeholder="Buscar"
+          value={filtro}
+          onChange={(e) => setFiltro(e.target.value)}
+        />
+        <button onClick={openModal}>Nueva empresa</button>
+      </div>
+      <section>
+        <table>
+          <thead>
+            <tr>
+              <th>Nº</th>
+              <th>EMPRESA</th>
+              <th>DIRECCION</th>
+              <th>TELEFONO</th>
+              <th>CORREO</th>
+              <th>ACCIONES</th>
+            </tr>
+          </thead>
+          {Empresa.filter((v) =>
+            v.nombre.toLowerCase().includes(filtro.toLowerCase())
+          ).map((v, i) => (
+            <tbody key={i}>
+              <tr>
+                <th>{i + 1}</th>
+                <th>{v.nombre}</th>
+                <th>{v.direccion}</th>
+                <th>{v.telefono}</th>
+                <th>{v.email}</th>
+                <th>
+                  <section>
+                    <button
+                      onClick={() => {
+                        setEmpresaactual(v);
+                      }}
+                    >
+                      {" "}
+                      Editar{" "}
+                    </button>
+                    <button
+                      onClick={() => {
+                        deleteEmpresas(v.id, getApi);
+                      }}
+                    >
+                      Eliminar
+                    </button>
+                  </section>
+                </th>
+              </tr>
+            </tbody>
+          ))}
+        </table>
+      </section>
     </Container>
   );
 };
 export default Empresas;
-
-export const Sectiond = styled.div`
+export const Container = styled.div`
   width: 100%;
-  display: flex;
-  flex-direction: row;
-
-  flex-wrap: wrap;
-  gap: 2em;
-`;
-export const Dippadretabla = styled.div`
-  width: 100%;
-  margin: 0 auto;
-  background-color: rgb(245, 245, 243);
-  overflow: hidden;
-  height: 65vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: solid 1px #0002;
-  & section {
+  align-items: center;
+  & > div {
+    padding: 0 2em;
+    margin: 0 auto;
     width: 100%;
+    background-color: #639adb;
+    height: 25vh;
     display: flex;
-    gap: 0.5em;
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-    
-    & h2 {
-      font-size: 1em;
-      padding: 0.5em 2em;
-      letter-spacing: 1.5px;
-     
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1em;
+    & label {
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 1.5;
+    }
+    & input {
+      width: 80%;
+      padding: 0.8em;
+      border: none;
+      background-color: transparent;
+      border-bottom: 1px solid #fff;
+      outline: none;
+      color: #fff;
+      letter-spacing: 3px;
+      &::placeholder {
+        color: #fff;
+      }
+    }
+    & button {
+      width: 10%;
+      padding: 0.7em;
+      border: none;
+      border-radius: 1em;
+      cursor: pointer;
+      border: solid 1px #639adb;
+      &:hover {
+        background-color: blue;
+        color: #fff;
+        border: solid 1px #fff;
+      }
     }
   }
-`;
-const Divtop = styled.div`
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-`;
-const Linkmininav = styled(Link)`
-  color: #22223b;
-  text-decoration: none;
+  & > section {
+    margin: 10vh auto;
+    width: 80%;
+    background-color: transparent;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1em;
+    & table {
+      border-collapse: collapse;
+      width: 80%;
+      height: 100%;
+      margin:0 auto;
+      & > thead {
+        & > tr {
+          & th {
+            background-color: #639adb;
+            color:#fff;
+            border-collapse: collapse;
+            padding:0.5em 0;
+          }
+        }
 
-  padding: 10px;
-  &:hover {
-    border-bottom: 2px solid #4a4e69;
-    background-color: #9ea4ca;
-    color: #fff;
+      }
+
+      & tbody{
+        height:auto;
+        & tr {
+          & th{
+            border-top:solid 1px #639adb;
+            border-bottom:solid 1px #639adb;
+            & > section{
+      display:flex;
+      flex-direction:column;
+      gap:0.2em;
+      margin:0.1em auto;
+      & button{
+        margin:0 auto;
+        width:80%;
+        background-color:#639adb;
+        &:hover{
+        background-color:#fff;
+        color:#639adb;
+        cursor: pointer;
+
+        }
+      }
+    } 
+          }
+        }
+      }
+ 
+    }
+ 
   }
 `;

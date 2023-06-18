@@ -2,15 +2,9 @@ import React from "react";
 import { useState } from "react";
 import { useModal } from "../hooks/useModal";
 import styled from "styled-components";
-import {
-  Container,
-  Divmayor,Dippadretabla,
-} from "../styles/crud";
-
 import { deleteTrabajo, getTrabajo } from "../services/Trabajo";
 import { UseFech } from "../hooks/useFech";
 import Formlaboratorio from "../Models/FormTrabajo";
-
 
 const baseUrl = import.meta.env.VITE_BACKEND_URL;
 
@@ -29,81 +23,141 @@ const Trabajos = () => {
       }}
     />
   );
-  
+
   return (
     <Container>
-      <Dippadretabla>
-        <Divmayor>
-          <label>buscar</label>{" "}
-          <input
-            type="text"
-            placeholder="Buscar"
-            value={filtro}
-            onChange={(e) => setFiltro(e.target.value)}
-          />
-        </Divmayor>
+      <div>
+        <label>buscar</label>{" "}
+        <input
+          type="text"
+          placeholder="Buscar"
+          value={filtro}
+          onChange={(e) => setFiltro(e.target.value)}
+        />
         <button onClick={openModal}>Agregar</button>
-        <Article>
-          {trabajo.map((v) => (
-            <div key={v.id}>
-              <Card>
-                <img src="https://cdn.pixabay.com/photo/2015/06/01/09/04/phone-793046_640.jpg" alt="" />
-                <div>
-                  <h1>{v.nombre}</h1>
-                  <p>{v.descripcion}</p>
-                  <p>{v.estado}</p>
-                </div>
-                <section>
-                  <button onClick={() => deleteTrabajo(v.id)}>eliminar</button>
-                  <button>editar</button>
-                </section>
-              </Card>
+      </div>
+      <section>
+        {trabajo.map((v) => (
+          <article key={v.id}>
+            <img
+              src="https://cdn.pixabay.com/photo/2015/06/01/09/04/phone-793046_640.jpg"
+              alt=""
+            />
+            <div>
+              <h1>{v.nombre}</h1>
+              <p>{v.descripcion}</p>
+              <strong>{v.estado}</strong>
             </div>
-          ))}
-        </Article>
-      </Dippadretabla>
+            <section>
+              <button onClick={() => deleteTrabajo(v.id)}>eliminar</button>
+              <button>editar</button>
+            </section>
+          </article>
+        ))}
+      </section>
     </Container>
   );
 };
-
 export default Trabajos;
+export const Container = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  & > div {
+    padding: 0 2em;
+    margin: 0 auto;
+    width: 100%;
+    background-color: #639adb;
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1em;
+    & label {
+      color: #fff;
+      text-transform: uppercase;
+      font-size: 1.5;
+    }
+    & input {
+      width: 80%;
+      padding: 0.8em;
+      border: none;
+      background-color: transparent;
+      border-bottom: 1px solid #fff;
+      outline: none;
+      color: #fff;
+      letter-spacing: 3px;
+      &::placeholder {
+        color: #fff;
+      }
+    }
+    & button {
+      width: 10%;
+      padding: 0.7em;
+      border: none;
+      border-radius: 1em;
+      cursor: pointer;
+      border: solid 1px #639adb;
+      &:hover {
+        background-color: blue;
+        color: #fff;
+        border: solid 1px #fff;
+      }
+    }
+  }
+  & > section {
+    margin: 10vh auto;
+    width: 80%;
+    background-color: transparent;
+    height: 80vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1em;
+    & > article {
+      box-shadow: 0 2px 5px #0005;
+      margin: 0 auto;
+      width: calc(90% / 4);
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      & > img {
+        width: 80%;
+        height: 2em;
+        height: auto;
+        object-fit: cover;
+        overflow: hidden;
+      }
+      & > div {
+        width: 100%;
+        background-color: #639adb;
+        color: #fff;
+        padding: 1em;
+      }
+      & strong {
+        border-top: solid 1px #fff;
+        padding: 0 40%;
+        border-bottom: solid 1px #fff;
+      }
 
-const Article = styled.div`
-width:100%;
-display:flex;
-justify-content:center;
-flex-direction:row;
-flex-wrap:wrap;
-gap:1em;
-border:solid 1px red;
-`;
-const Card = styled.div`
-width:calc(95% / 4);
-display:flex;
-justify-content:center;
-align-items:center;
-flex-direction:column;
-background-color:blue;
-& > img{
-  width:100%;
-  height:auto;
-}
-& section {
-  width:100%;
-  background-color:#ecedf1;
-  display:flex;
-justify-content:space-around;
-align-items:center;
-& button{
-  width:40%;
-  padding:0.5em 0;
-  background-color:blue;
-  border-radius:0.5em;
-}
-}
-`;
-export const Sectiond = styled.div`
-width:100%;
-
-
+      & > section {
+        & button {
+          color: blue;
+          border: solid 2px #639adb;
+          cursor: pointer;
+          margin: 1em 0.5em;
+          padding: 0.2em 2em;
+          &:hover {
+            background-color: #639adb;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
 `;
