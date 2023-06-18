@@ -22,9 +22,10 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter> */}
-      <Nav/>
+      {/* <Nav/>
       <Home/>
-      <Footer/>
+      <Footer/> */}
+      <Empleos/>
     </>
   );
 }

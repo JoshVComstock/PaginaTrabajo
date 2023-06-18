@@ -16,6 +16,7 @@ class CreateTrabajosTable extends Migration
         Schema::create('trabajos', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
+            $table->string("descripcion");
             $table->foreignId('id_empresas')->constrained('empresas')->cascadeOnUpdate()->cascadeOnDelete();
             $table->string('estado');
             $table->date('fecha');

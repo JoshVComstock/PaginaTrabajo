@@ -10,6 +10,7 @@ class Trabajo extends Model
     use HasFactory;
     protected $fillable = [
         'nombre',
+        'descripcion',
         'id_empresas',
         'estado',
         'fecha',
