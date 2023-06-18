@@ -235,11 +235,9 @@ export const Divbotones = styled.div`
 `;
 
 export const Dippadretabla = styled.div`
-  width: 100%;
+  width: 100vw;
   margin: 0 auto;
   background-color: rgb(245, 245, 243);
-
-  overflow: hidden;
   height: 50vh;
   display: flex;
   flex-direction: column;
@@ -259,9 +257,7 @@ export const Dippadretabla = styled.div`
       border-radius: 5px;
       font-size: 15px;
       transition: all 2s ease-in-out;
-      &:hover {
-        transform: rotate(180deg);
-      }
+  
     }
     & h2 {
       font-size: 1em;
@@ -278,10 +274,11 @@ export const Tbody = styled.tbody``;
 
 export const Sectiontabla = styled.section`
   overflow-y: scroll;
-  width: 100vw;
+  width:80%;
   height: calc(100vh - 4em);
   margin-bottom: 0.5em;
-  margin: 20px;
+  border:solid 1px red;
+background-color:blue;
 `;
 export const Th = styled.th`
   border: solid 0.5px #0002;
@@ -317,3 +314,10 @@ export const Inputs = styled.input`
     border: 1.5px solid #034078;
   }
 `;
+
+
+
+
+
+
+
