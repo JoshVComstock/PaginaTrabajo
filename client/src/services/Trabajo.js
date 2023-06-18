@@ -14,13 +14,18 @@ export const getTrabajo = async () => {
     console.log(error);
   }
 };
+
+
+
 export const deleteTrabajo = async (id, callback) => {
+
   const response = await fetch(`${baseUrl}trabajo/${id}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
       accept: "application/json",
     },
+
   })
   if (response.ok) {
     callback();
