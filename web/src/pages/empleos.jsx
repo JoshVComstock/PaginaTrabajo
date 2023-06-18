@@ -1,7 +1,6 @@
 import React from "react";
 import "../style/empleos.css";
 import { styled } from "styled-components";
-import colors from "../style/colors";
 const Empleos = () => {
   return (
     <div className="contain">
