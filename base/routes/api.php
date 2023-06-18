@@ -40,6 +40,7 @@ Route::put('/postulacion/{id}', [PostulacionController::class, 'update']);
 Route::delete('/postulacion/{id}', [PostulacionController::class, 'destroy']);
 
 Route::get('/rol', [RolController::class, 'index']);
+Route::get('/roles', [RolController::class, 'metget']);
 Route::post('/rol', [RolController::class, 'store']);
 Route::put('/rol/{id}', [RolController::class, 'update']);
 Route::delete('/rol/{id}', [RolController::class, 'destroy']);

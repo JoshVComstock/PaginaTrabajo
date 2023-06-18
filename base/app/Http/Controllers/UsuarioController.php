@@ -22,7 +22,7 @@ class UsuarioController extends Controller
             'email' => 'required|email|unique:users',
             'telefono' => 'required',
             'id_roles' => 'required',
-            'contraseña' => 'required|confirmed'
+            'password' => 'required|confirmed'
         ]);
 
         $User = new Usuario();
@@ -34,7 +34,7 @@ class UsuarioController extends Controller
         $User->email = $request->email;
         $User->telefono = $request->telefono;
         $User->id_roles = $request->id_roles;
-        $User->contraseña = Hash::make($request->contraseña);
+        $User->password = Hash::make($request->password);
         $User->save();
         return response()->json([
             "status" => 1,
@@ -42,15 +42,20 @@ class UsuarioController extends Controller
         ]);
     }
     public function login(Request $request)
-    { $request->validate([ "email" => "required|email", "password" => "required"
+    {
+        $request->validate([
+            "email" => "required|email",
+            "password" => "required"
+
         ]);
-        $user = Usuario::where("email", "=", $request->email)->first();
-        if (isset($user->id)) {
-            if (Hash::check($request->password, $user->password)) {
-                //get user
-                $userData = DB::select("select id, nombre, apellidopaterno,apellidomaterno,fecha_nacimiento,carnet, email, telefono, id_roles from usuarios where email = '$request->email'");
-                //crear tokem
-                $token = $user->createToken("auth_token")->plainTextToken;
+
+        $usuario = Usuario::where("email", "=", $request->email)->first();
+        if (isset($usuario->id)) {
+            if (Hash::check($request->password, $usuario->password)) {
+
+                $userData = DB::select("select id, nombre, email, apellidopaterno,apellidomaterno,telefono,carnet,fecha_nacimiento,password, id_roles from usuarios where email = '$request->email'");
+
+                $token = $usuario->createToken("auth_token")->plainTextToken;
                 return response()->json([
                     "status" => 1,
                     "msg" => "Usuario logeado",

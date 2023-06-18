@@ -26,29 +26,19 @@ export const deleteRegister = async (id, callback) => {
     callback();
   }
 };
-export const updateRegister = async (ciudadactual, callback) => {
-  const response = await fetch(`${baseUrl}ciudades/${ciudadactual.id}`, {
-    method: "PUT",
-    headers: {
-      "Content-Type": "application/json",
-      accept: "application/json",
-    },
-    body: JSON.stringify({
-      ciudad: ciudadactual.ciudad,
-    })
-  });
-  if (response.ok) {
-    callback();
-  }
-}
-export const postRegister = async (nombre, email, telefono, rol, password, conpassword, callback) => {
+
+export const postRegister = async (  nombre, apellidopaterno, apellidomaterno, fecha_nacimiento, carnet, email, telefono, id_roles, password, password_confirmation, callback) => {
   console.log(JSON.stringify({
-    nombre: nombre,
-    email: email,
-    telefono: telefono,
-    rol: rol,
-    password: password,
-    password_confirmation: conpassword
+    nombre:nombre,
+    apellidopaterno:apellidopaterno,
+    apellidomaterno:apellidomaterno,
+    fecha_nacimiento:fecha_nacimiento,
+    carnet:carnet,
+    email:email,
+    telefono:telefono,
+    id_roles:id_roles,
+    password:password,
+    password_confirmation:password_confirmation,
 
   }))
   const response = await fetch(`${baseUrl}register`, {
@@ -58,12 +48,16 @@ export const postRegister = async (nombre, email, telefono, rol, password, conpa
       accept: "application/json",
     },
     body: JSON.stringify({
-      nombre: nombre,
-      email: email,
-      telefono: telefono,
-      rol: rol,
-      password: password,
-      password_confirmation: conpassword
+      nombre:nombre,
+      apellidopaterno:apellidopaterno,
+      apellidomaterno:apellidomaterno,
+      fecha_nacimiento:fecha_nacimiento,
+      carnet:carnet,
+      email:email,
+      telefono:telefono,
+      id_roles:id_roles,
+      password:password,
+      password_confirmation:password_confirmation,
 
     })
   });

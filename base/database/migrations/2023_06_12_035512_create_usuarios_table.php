@@ -17,7 +17,7 @@ class CreateUsuariosTable extends Migration
             $table->string('carnet');
             $table->string('telefono');
             $table->string('email');
-            $table->string('contraseña');
+            $table->string('password');
             $table->foreignId('id_roles')->constrained('roles')->cascadeOnUpdate()->cascadeOnDelete();
             $table->timestamps();
         });

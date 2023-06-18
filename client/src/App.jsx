@@ -13,6 +13,7 @@ import { Navcontextprovider } from "./context/navcontext";
 import { Usercontextprovider } from "./context/userContext";
 import Consultas from "./pages/Postulaciones";
 import FormEmpresas from "./Models/FormEmpresas";
+import Register from "./pages/Register";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Navcontextprovider>
               <Routes>
                 <Route path="login" element={<Login />} />
+                <Route path="register" element={<Register />} />
                 <Route path="/" element={<Navbar />}>
                   <Route path="home" element={<Home />} />
                   <Route path="centros" element={<Rol />} />

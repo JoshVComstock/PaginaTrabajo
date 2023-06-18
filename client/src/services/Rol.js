@@ -16,6 +16,25 @@ export const getRoles = async () => {
     console.log(error);
   }
 };
+
+export const getRolesh = async () => {
+
+  try {
+    const response = await fetch(`${baseUrl}roles`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      },
+
+    })
+    return response;
+
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
 export const deleteRoles = async (id, callback) => {
 
   const response = await fetch(`${baseUrl}rol/${id}`, {
