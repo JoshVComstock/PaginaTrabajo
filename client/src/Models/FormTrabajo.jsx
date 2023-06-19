@@ -14,7 +14,7 @@ const Formlaboratorio = ({
   const [estado,setEstado]=useState("");
   const [fecha,setFecha]=useState("");
   const [descripcion,setDescripcion]=useState("");
-  const [id_empresa, setId_empresa] = useState();
+  const [id_empresa, setId_empresa] = useState("");
   const { data: empresa } = UseFech(getEmpresas);
 
   useEffect(() => {
@@ -22,7 +22,6 @@ const Formlaboratorio = ({
       setNombre(trabajoactual.nombre);
       setEstado(trabajoactual.estado);
       setFecha(trabajoactual.fecha);
-
       setDescripcion(trabajoactual.descripcion);
     }
     return () => {
@@ -58,7 +57,6 @@ const Formlaboratorio = ({
       });
     }
   };
-
   return (
     <Container>
       <div>

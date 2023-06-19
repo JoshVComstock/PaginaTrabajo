@@ -9,7 +9,7 @@ import Formlaboratorio from "../Models/FormTrabajo";
 const baseUrl = import.meta.env.VITE_BACKEND_URL;
 
 const Trabajos = () => {
-  const [trabajoactual, setTrabajoactual] = useState({});
+  const [trabajoactual, setTrabajoactual] = useState("");
   const [filtro, setFiltro] = useState("");
   const { getApi, data: trabajo } = UseFech(getTrabajo);
 
@@ -52,11 +52,12 @@ const Trabajos = () => {
               <strong>{v.estado}</strong>
             </div>
             <section>
-              <button     onClick={() => {
+              <button onClick={() => {
                           deleteTrabajo(v.id, getApi);
                         }}
                         >eliminar</button>
-              <button  onClick={() => {
+              <button  
+              onClick={() => {
                     setTrabajoactual(v);
                   }} >editar</button>
             </section>

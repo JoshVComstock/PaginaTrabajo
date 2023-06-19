@@ -35,10 +35,8 @@ const Navbar = () => {
             <Linkes to="/trabajos">Trabajos</Linkes>
           </Diva>
           <User>
-            <Topnavimg src="src\img\avatar.png" alt="" />
-            <Select>
-              <Option>{user.nombre}</Option>
-            </Select>
+         <p>Usuario logueado :</p>
+         <p> {user.nombre}</p>
             <button onClick={Cerrasesion}>Salir</button>
           </User>
         </Topnav>
@@ -112,6 +110,12 @@ const User = styled.div`
   display: flex;
   justify-content: end;
   align-items: center;
+  & button{
+    margin:0 1em ;
+  padding:0.5em 3em;
+  border-radius:1em;
+background-color:#639adb;
+  }
 `;
 const H = styled.h5`
   color: #000000;
