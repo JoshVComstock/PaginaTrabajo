@@ -9,18 +9,21 @@ import Formlaboratorio from "../Models/FormTrabajo";
 const baseUrl = import.meta.env.VITE_BACKEND_URL;
 
 const Trabajos = () => {
-  const [actual, setActual] = useState({});
+  const [trabajoactual, setTrabajoactual] = useState({});
   const [filtro, setFiltro] = useState("");
   const { getApi, data: trabajo } = UseFech(getTrabajo);
+
   const { openModal, closeModal } = useModal(
-    Object.keys(actual).length > 0 ? "Editar" : "Agregar ",
+    Object.keys(trabajoactual).length > 0
+      ? "Editar "
+      : "Agregar ",
     <Formlaboratorio
-      getApi={getApi}
-      actual={actual}
-      setActual={setActual}
-      closeModal={() => {
-        closeModal();
-      }}
+    getApi={getApi}
+    trabajoactual={trabajoactual}
+    setTrabajoactual={setTrabajoactual}
+    closeModal={() => {
+      closeModal();
+    }}
     />
   );
 
@@ -37,8 +40,8 @@ const Trabajos = () => {
         <button onClick={openModal}>Agregar</button>
       </div>
       <section>
-        {trabajo.map((v) => (
-          <article key={v.id}>
+        {trabajo.map((v,i) => (
+          <article key={i}>
             <img
               src="https://cdn.pixabay.com/photo/2015/06/01/09/04/phone-793046_640.jpg"
               alt=""
@@ -49,8 +52,13 @@ const Trabajos = () => {
               <strong>{v.estado}</strong>
             </div>
             <section>
-              <button onClick={() => deleteTrabajo(v.id)}>eliminar</button>
-              <button>editar</button>
+              <button     onClick={() => {
+                          deleteTrabajo(v.id, getApi);
+                        }}
+                        >eliminar</button>
+              <button  onClick={() => {
+                    setTrabajoactual(v);
+                  }} >editar</button>
             </section>
           </article>
         ))}
@@ -112,7 +120,7 @@ export const Container = styled.div`
     margin: 10vh auto;
     width: 80%;
     background-color: transparent;
-    height: 80vh;
+    height: auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -126,6 +134,7 @@ export const Container = styled.div`
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
+      height:auto;
       & > img {
         width: 80%;
         height: 2em;

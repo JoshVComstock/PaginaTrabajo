@@ -135,11 +135,13 @@ const Divboton = styled.div`
 `;
 const Botonagregar = styled.button`
   padding: 10px;
+  width:80%;
   cursor: pointer;
   background: #0077b6;
   color: #fff;
   border-radius: 7px;
   &:hover {
-    background: #40607e;
+    background: #000;
+    color:#fff;
   }
 `;

@@ -6,34 +6,35 @@ import { getEmpresas } from "../services/Empresas";
 import { postTrabajo,updateTrabajo } from "../services/Trabajo";
 const Formlaboratorio = ({
   getApi,
-  actual,
-  setActual,
+  trabajoactual,
+  setTrabajoactual,
   closeModal,
 }) => {
   const [nombre, setNombre] = useState("");
   const [estado,setEstado]=useState("");
   const [fecha,setFecha]=useState("");
-  const [descripcion,setDescripcion]=useState("")
+  const [descripcion,setDescripcion]=useState("");
   const [id_empresa, setId_empresa] = useState();
   const { data: empresa } = UseFech(getEmpresas);
 
   useEffect(() => {
-    if (Object.keys(actual).length > 0) {
-      setNombre(actual.nombre);
-      setDireccion(actual.direccion);
-      setTelefono(actual.telefono);
-      setDescripcion(actual.descripcion);
+    if (Object.keys(trabajoactual).length > 0) {
+      setNombre(trabajoactual.nombre);
+      setEstado(trabajoactual.estado);
+      setFecha(trabajoactual.fecha);
+
+      setDescripcion(trabajoactual.descripcion);
     }
     return () => {
-      setActual({});
+      setTrabajoactual({});
     };
-  }, [actual]);
+  }, [trabajoactual]);
   const updatepost = (e) => {
     e.preventDefault();
-    if (Object.keys(actual).length > 0) {
+    if (Object.keys(trabajoactual).length > 0) {
       updateTrabajo(
         {
-          id: actual.id,
+          id: trabajoactual.id,
           nombre: nombre,
           estado: estado,
           fecha: fecha,
@@ -42,7 +43,7 @@ const Formlaboratorio = ({
         },
         () => {
           closeModal();
-          setActual({});
+          setTrabajoactual({});
           getApi();
         }
       );
@@ -115,7 +116,7 @@ const Formlaboratorio = ({
           </Divinput>
           <Divinput>
             <Divinputlabel>
-              <label>Provincia</label>
+              <label>Empresa</label>
               <Select
                 value={id_empresa}
                 onChange={(e) => setId_empresa(e.target.value)}
@@ -133,7 +134,7 @@ const Formlaboratorio = ({
             <Botonagregar
               onClick={(e)=>{updatepost(e)}}
             >
-              {Object.keys(actual).length > 0 ? "Editar" : "Agregar"}
+              {Object.keys(trabajoactual).length > 0 ? "Editar" : "Agregar"}
             </Botonagregar>
           </Divboton>
         </form>

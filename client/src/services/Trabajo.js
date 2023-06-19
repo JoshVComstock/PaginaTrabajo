@@ -18,7 +18,6 @@ export const getTrabajo = async () => {
 
 
 export const deleteTrabajo = async (id, callback) => {
-
   const response = await fetch(`${baseUrl}trabajo/${id}`, {
     method: "DELETE",
     headers: {

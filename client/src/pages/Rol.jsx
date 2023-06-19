@@ -3,30 +3,6 @@ import { useState, useEffect } from "react";
 import { useModal } from "../hooks/useModal";
 
 const baseUrl = import.meta.env.VITE_BACKEND_URL;
-<<<<<<< HEAD
-import {
-  Container,
-  Titulo,
-  Divbotones,
-  Divsearchpadre,
-  Divsearch,
-  Search,
-  Botonsearch,
-  Botonacciones,
-  Iconsacciones1,
-  Botonesacciones,
-  Divtabla,
-  Thead,
-  Tbody,
-  Divmayor,
-  Sectiontabla,
-  Tabla,
-  Th,
-  Trdatos,
-} from "../styles/crud";
-=======
-
->>>>>>> 32e83aaba7295aac8b13f37f49ae1341f5162c8b
 import { UseFech } from "../hooks/useFech";
 import { getRoles } from "../services/Rol";
 import { Container } from "./Empresas";

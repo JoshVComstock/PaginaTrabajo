@@ -89,4 +89,6 @@ const DivCabecera = styled.div`
 `;
 const DivBody = styled.div`
   padding: 26px;
+  background-color: #639adb;
+
 `;

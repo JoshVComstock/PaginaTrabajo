@@ -10,7 +10,7 @@ class TrabajoController extends Controller
 {
     public function index()
     {
-        return DB::select("SELECT t.nombre,e.nombre as empresa,t.descripcion,t.estado,t.fecha FROM trabajos as t, empresas as e WHERE t.id_empresas=e.id");
+        return DB::select("SELECT t.id, t.nombre,e.nombre as empresa,t.descripcion,t.estado,t.fecha FROM trabajos as t, empresas as e WHERE t.id_empresas=e.id");
     }
     public function store(Request $request)
     {

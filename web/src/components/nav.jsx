@@ -18,7 +18,7 @@ const Nav = () => {
             <Links to="/Empleos">Empleos</Links>
             <Links to="/Empresas">Empresas</Links>
           </section>
-          <Links to="/login">Iniciar secion</Links>
+          <Links to="http://127.0.0.1:5173/login">Iniciar secion</Links>
         </Anav>
         <Abusqueda />
         <Footer />
